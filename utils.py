@@ -2,7 +2,6 @@
 # -*-coding:utf-8 -*-
 
 from __future__ import print_function, division, absolute_import
-from email.mime import base
 from logging import warning
 import math
 import warnings
