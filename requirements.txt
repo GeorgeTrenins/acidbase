@@ -1,5 +1,5 @@
 numpy>=1.21
 matplotlib>=3.5
-ipython>=8.3
+ipython>=7
 ipywidgets>=7.6
 ipympl>=0.8.7
