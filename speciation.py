@@ -51,6 +51,7 @@ def main():
 	ax.set_ylabel(r'% conc.')
 	lines = []
 	nans = np.nan*np.ones_like(pH)
+	fig.set_label('Ion Speciation')
 	for i in range(4):
 			lines.append(ax.plot(pH, nans)[0])
 

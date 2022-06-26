@@ -11,6 +11,16 @@ import matplotlib.pyplot as plt
 pKw = 14.0
 Kw = 1.0e-14
 
+### buffer capacity ###
+def beta(pH, ca, pKa):
+
+	H = 10**(-pH)
+	Ka = 10**(-pKa)
+	ln10 = np.log(10.0)
+	ans = ca*Ka*H/(H+Ka)**2
+	ans += Kw/H + H
+	return ln10 * ans
+
 ### Speciation ###
 def get_species(pH, *args):
 	# For an n-protic acid, calculate the ratio of [H_(n-j) A^(j-)]/c_tot
