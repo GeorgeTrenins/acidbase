@@ -19,7 +19,7 @@ def get_equiv_pH(equiv, V_add, pH):
 	else:
 		b = (idx, idx+1)
 
-	if idx >= len(V_add):
+	if b[-1] >= len(V_add):
 		# prevent out-of-range error
 		ans = pH[-1] + 100
 	else:
