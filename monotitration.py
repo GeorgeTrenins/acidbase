@@ -19,8 +19,12 @@ def get_equiv_pH(equiv, V_add, pH):
 	else:
 		b = (idx, idx+1)
 
-	slope = (pH[b[1]] - pH[b[0]])/(V_add[b[1]] - V_add[b[0]])
-	ans = slope*(equiv-V_add[b[0]]) + pH[b[0]]
+	if idx >= len(V_add):
+		# prevent out-of-range error
+		ans = pH[-1] + 100
+	else:
+		slope = (pH[b[1]] - pH[b[0]])/(V_add[b[1]] - V_add[b[0]])
+		ans = slope*(equiv-V_add[b[0]]) + pH[b[0]]
 	return ans
 
 def plot_pH(na, pKa, Vi, C, line, vline, hline, fig, Vmax=50.0):
